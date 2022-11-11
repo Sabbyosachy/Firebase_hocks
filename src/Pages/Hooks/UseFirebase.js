@@ -1,4 +1,5 @@
 import {
+  createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
@@ -12,6 +13,8 @@ initializeAuthentication();
 const UseFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState();
+  const [email, setEmail] = useState();
+  const [pass, setPass] = useState();
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 
@@ -45,6 +48,7 @@ const UseFirebase = () => {
       }
     });
   }, []);
+
   return {
     user,
     error,
